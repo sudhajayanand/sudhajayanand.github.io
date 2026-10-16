@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sudha Jagatheesh Jayanand</title>
+<meta name="description" content="Sudha Jagatheesh Jayanand. MSc Cognitive Science student at École Normale Supérieure – PSL, working on computational models of learning, decision-making and human–AI interaction.">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FBF0F2;
+    --ink: #23262C;
+    --soft: #6B7079;
+    --faint: #A3A7AE;
+    --line: #ECD9DD;
+    --link: #8A2E4B;
+    --head: #8A2E4B;
+    --col: 620px;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Source Serif 4", Georgia, serif;
+    font-optical-sizing: auto;
+    font-size: 1.08rem;
+    line-height: 1.62;
+    font-variant-numeric: oldstyle-nums;
+  }
+  main { max-width: var(--col); margin: 0 auto; padding: 64px 16px 80px; }
+  @media (min-width: 720px) { main { padding: 14vh 24px 112px; } }
+
+  a { color: inherit; }
+  a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 2px; }
+  .ln {
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-color: var(--line);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    transition: text-decoration-color .15s;
+  }
+  .ln:hover { text-decoration-color: var(--link); }
+
+  /* ---------- Header ---------- */
+  h1 { font-weight: 500; font-size: 1.9rem; line-height: 1.2; letter-spacing: -0.01em; margin: 0; }
+  .affil { margin: 6px 0 0; color: var(--soft); }
+  .links { list-style: none; padding: 0; margin: 22px 0 0; display: flex; flex-wrap: wrap; gap: 6px 24px; }
+
+  /* ---------- Sections ---------- */
+  section { margin-top: 64px; scroll-margin-top: 32px; }
+  h2 {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--head);
+    margin: 0 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  h3 { font-weight: 400; font-style: italic; font-size: 0.98rem; color: var(--head); margin: 30px 0 14px; }
+  p { margin: 0 0 14px; }
+  .soft { color: var(--soft); }
+
+  /* Interests */
+  .interests { display: grid; gap: 10px; margin: 22px 0 0; }
+  .interests div { display: grid; grid-template-columns: 1fr; gap: 0; }
+  @media (min-width: 560px) { .interests div { grid-template-columns: 92px 1fr; gap: 16px; } }
+  .interests dt { color: var(--head); font-style: italic; }
+  .interests dd { margin: 0; }
+
+  /* Currently */
+  .now { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+  .now li { display: flex; align-items: center; gap: 14px; }
+  .now .role { line-height: 1.4; }
+  .now .role span { display: block; font-size: 0.95rem; color: var(--soft); }
+  .mark {
+    flex: none; width: 38px; height: 38px;
+    display: grid; place-items: center;
+    border: 1px solid var(--line); border-radius: 8px; background: #fff;
+    overflow: hidden; font-size: 0.95rem; color: var(--soft);
+  }
+  .mark img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+  .mark.nologo { display: none; }
+
+  /* Year + entry lists (projects, publications, experience) */
+  .entries { list-style: none; padding: 0; margin: 0; display: grid; gap: 22px; }
+  .entries li { display: grid; grid-template-columns: 1fr; gap: 2px; }
+  @media (min-width: 560px) { .entries li { grid-template-columns: 92px 1fr; gap: 16px; } }
+  .yr { color: var(--head); font-variant-numeric: lining-nums tabular-nums; font-size: 0.95rem; padding-top: 1px; }
+  .entry-title { font-weight: 500; }
+  .entry-meta { color: var(--soft); font-size: 0.95rem; }
+  .entry-body { margin: 4px 0 0; font-size: 0.99rem; }
+  .entry-links { margin-top: 4px; font-size: 0.95rem; display: flex; gap: 16px; }
+  .pub { font-size: 0.99rem; line-height: 1.55; }
+  .pub .me { font-weight: 600; }
+  .pub .t { color: var(--ink); }
+  .pub .v { font-style: italic; }
+
+  footer {
+    margin-top: 80px; padding-top: 18px; border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    font-size: 0.92rem; color: var(--soft);
+  }
+
+  /* ---------- Margin index (wide screens only) ---------- */
+  .index { display: none; }
+  @media (min-width: 1180px) {
+    .index {
+      display: block;
+      position: fixed;
+      top: 14vh;
+      left: calc(50% - var(--col) / 2 - 190px);
+      width: 150px;
+      font-size: 0.92rem;
+    }
+    .index ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+    .index a {
+      display: block;
+      color: var(--faint);
+      text-decoration: none;
+      padding-left: 12px;
+      border-left: 1px solid var(--line);
+      transition: color .15s, border-color .15s;
+    }
+    .index a:hover { color: var(--ink); }
+    .index a.on { color: var(--head); border-left-color: var(--head); }
+  }
+</style>
+</head>
+<body>
+
+<nav class="index" aria-label="Contents">
+  <ul>
+    <li><a href="#interests">Interests</a></li>
+    <li><a href="#currently">Currently</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#publications">Publications</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <header>
+    <h1>Sudha Jagatheesh Jayanand</h1>
+    <p class="affil">MSc Cognitive Science, École Normale Supérieure – PSL, Paris</p>
+    <ul class="links">
+      <li><a class="ln" href="cv.pdf">CV</a></li>
+      <li><a class="ln" href="https://github.com/sudhajagatheesh">GitHub</a></li>
+      <li><a class="ln" href="https://www.linkedin.com/in/sudhajjayanand">LinkedIn</a></li>
+    </ul>
+    <p style="margin-top:32px">I am interested in how people and AI systems learn, and in what cognitive science can tell us about both.</p>
+  </header>
+
+  <!-- ===== Interests ===== -->
+  <section id="interests">
+    <h2>Interests</h2>
+    <dl class="interests" style="margin:0">
+      <div><dt>Topics</dt><dd>Reinforcement learning and decision-making; social learning, cultural evolution and cross-cultural cognition; human–AI interaction and trust; machine psychology and mechanistic interpretability; AI safety and governance</dd></div>
+      <div><dt>Methods</dt><dd>Computational cognitive modelling (reinforcement learning, Bayesian inference, evidence-accumulation models); machine learning and NLP (text classification, clustering, sentence embeddings); quantitative analysis of large-scale and panel data, in Python and R</dd></div>
+    </dl>
+  </section>
+
+  <!-- ===== Currently ===== -->
+  <section id="currently">
+    <h2>Currently</h2>
+    <!-- Logos: add a "logos" folder to the repo with ens.png and ocpsg.png.
+         Until a file is there, nothing shows in its place. -->
+    <ul class="now">
+      <li>
+        <span class="mark"><img src="logos/ens.png" alt="" onerror="this.parentNode.classList.add('nologo')"></span>
+        <div class="role">MSc Cognitive Science (CogMaster), École Normale Supérieure – PSL<span>Specialisation: Cognitive Modelling, Neurotheory and AI</span><span>Minor: Data Science and AI</span></div>
+      </li>
+      <li>
+        <span class="mark"><img src="logos/ocpsg.png" alt="" onerror="this.parentNode.classList.add('nologo')"></span>
+        <div class="role">Co-Director<span>Oxford Computational Political Science Group</span></div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===== Projects ===== -->
+  <section id="projects">
+    <h2>Personal and academic projects</h2>
+    <!-- Replace each "Code" link with the repo URL. To add a project, copy an <li>. -->
+    <ul class="entries">
+      <li>
+        <span class="yr">2026</span>
+        <div>
+          <div class="entry-title">Do optimistic learners do better in social dilemmas?</div>
+          <p class="entry-body">Extends Hoxha, Sperber and Palminteri (2025), which asks whether evolution favours positivity-biased learners, from bandit tasks to an iterated Prisoner's Dilemma with Q-learning agents.</p>
+          <div class="entry-links"><a class="ln" href="https://github.com/sudhajagatheesh">Code</a></div>
+        </div>
+      </li>
+      <li>
+        <span class="yr">2025</span>
+        <div>
+          <div class="entry-title">Narratives of distress</div>
+          <p class="entry-body">Unsupervised NLP on around 800 expert-annotated posts from five mental health communities. Sentence-BERT clusters aligned with community boundaries and differed in emotional tone.</p>
+          <div class="entry-links"><a class="ln" href="https://github.com/sudhajagatheesh">Code</a></div>
+        </div>
+      </li>
+      <li>
+        <span class="yr">2025</span>
+        <div>
+          <div class="entry-title">Forecasting under structural breaks</div>
+          <p class="entry-body">Regularised regression on 96 years of Yuan-dynasty inflation, where a structural break limited out-of-sample generalisation, and classifiers predicting Bank of England rate decisions.</p>
+          <div class="entry-links"><a class="ln" href="https://github.com/sudhajagatheesh">Code</a></div>
+        </div>
+      </li>
+      <li>
+        <span class="yr">2024</span>
+        <div>
+          <div class="entry-title">Housing price prediction</div>
+          <p class="entry-body">An end-to-end pipeline on 179,000 Stockholm apartment sales, benchmarking linear, gradient-boosted and neural models. A tuned LightGBM reached 6.9% test MAPE.</p>
+          <div class="entry-links"><a class="ln" href="https://github.com/sudhajagatheesh">Code</a></div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===== Publications ===== -->
+  <section id="publications">
+    <h2>Publications</h2>
+    <ul class="entries">
+      <li>
+        <span class="yr">2026</span>
+        <div class="pub">Priolo, G., Stablum, F., Vacondio, M., … <span class="me">Jagatheesh Jayanand, S.</span>, … &amp; Rubaltelli, E. <span class="t">The robustness of mental accounting across 21 countries.</span> <span class="v">Journal of Consumer Research.</span> <a class="ln" href="https://doi.org/10.1093/jcr/ucag022">doi</a>
+          <div class="entry-meta">Multi-site replication consortium, 100+ authors</div></div>
+      </li>
+    </ul>
+
+    <h3>Student papers and working papers</h3>
+    <ul class="entries">
+      <li>
+        <span class="yr">2025</span>
+        <div class="pub">Sakovych, A. A., <span class="me">Jagatheesh Jayanand, S.</span>, Adesanya, S., &amp; Adesanya, I. <span class="t">Hobbesian sovereign in 21st century Ukraine: Assessing the impact of the Russo-Ukrainian war on public opinion of Volodymyr Zelenskyy.</span> <span class="v">LSE Undergraduate Political Review, 8(1),</span> 29–47.</div>
+      </li>
+      <li>
+        <span class="yr">2025</span>
+        <div class="pub">Tharakan, A., Mysore, A., Chan, H. C. H., Kong, H., Lu, S., <span class="me">Jagatheesh Jayanand, S.</span>, &amp; Wang, Z. <span class="t">Donating left, polluting right? The impact of corporate political leanings on environmental performance.</span> <span class="v">Working paper, LSE GROUPS.</span></div>
+      </li>
+      <li>
+        <span class="yr">2024</span>
+        <div class="pub">Brotons Batista, E., Dyonmez, I. L., &amp; <span class="me">Jagatheesh Jayanand, S.</span> <span class="t">To what extent do corporate and governmental organisations involved in AI accurately incorporate public welfare into their leadership decisions?</span> <span class="v">Laidlaw Scholars Research Report, LSE.</span></div>
+      </li>
+    </ul>
+
+    <h3>Conference presentations</h3>
+    <ul class="entries">
+      <li>
+        <span class="yr">2025</span>
+        <div class="pub"><span class="t">Performing inclusion, governing exclusion? Investigating the dynamics of migrant integration in the EU.</span> <span class="v">LSE Knowledge Beyond Boundaries Undergraduate Research Conference,</span> London.</div>
+      </li>
+      <li>
+        <span class="yr">2024</span>
+        <div class="pub"><span class="t">Populism, anti-elitism, and right-wing populist support: A cross-cultural investigation.</span> <span class="v">LSE Knowledge Beyond Boundaries Undergraduate Research Conference,</span> London.</div>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>Reach out at sudharsana.jayanand[at]ens.psl.eu</span>
+    <span>Updated October 2026</span>
+  </footer>
+</main>
+
+<script>
+  // Highlight the current section in the margin index
+  (function () {
+    var links = document.querySelectorAll('.index a');
+    if (!links.length || !('IntersectionObserver' in window)) return;
+    var map = {};
+    links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          links.forEach(function (a) { a.classList.remove('on'); });
+          if (map[e.target.id]) map[e.target.id].classList.add('on');
+        }
+      });
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    Object.keys(map).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) io.observe(el);
+    });
+  })();
+</script>
+</body>
+</html>
